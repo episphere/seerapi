@@ -14,10 +14,13 @@ if(seerapi.keyInput){
         seerapi.keyInput.value=localStorage.seerAPIkey
     }
     seerapi.keyInput.onkeyup=ev=>{
-        readCheck='<span style:"font-size:x-small">(then press Enter to save)</span>'
+        changeKey.innerText='(Enter to save)'
+        changeKey.style.fontSize='small'
         if(ev.keyCode==13){
             console.log(`new seer key logged at ${Date()}`)
             localStorage.seerAPIkey=seerapi.keyInput.value
+            changeKey.innerHTML='&#x2714;'
+            changeKey.style.fontSize='medium'
         }
         //debugger &#x2714;
     }
